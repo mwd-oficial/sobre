@@ -1,0 +1,575 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --anima-brilho: #000;
+    --anima-brilho-escuro: #000;
+    --anima-brilho-transparente: #000;
+}
+
+::selection {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ddd;
+    border-radius: 2000px;
+}
+
+body,
+html {
+    min-height: 100vh;
+    max-width: 100vw;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    text-align: justify;
+    font-family: 'Kalam', Arial, Helvetica, sans-serif ;
+    background-image: url(../imagens/codigos-fundo.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+#carregando {
+    position: fixed;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    min-width: 200px;
+    width: 110vw;
+    height: 110vh;
+    overflow: hidden;
+    z-index: 999999;
+}
+
+#carregar {
+    background-color: transparent;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid #fff;
+    border-right: 10px solid #fff;
+    border-left: 10px solid #fff;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: preload .5s linear infinite;
+}
+
+#pcarregar {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+}
+
+@keyframes preload {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#divVideo {
+    background-color: transparent;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+}
+
+video {
+    height: 100vh;
+}
+
+#divImg {
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#divImg img {
+    width: 75%;
+    opacity: 1;
+    transition-duration: .5s;
+}
+
+header {
+    position: sticky;
+    top: 0px;
+    left: 0;
+    height: 50px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    z-index: 1000;
+    transition-duration: .5s;
+}
+
+header.header-scroll {
+    backdrop-filter: blur(20px);
+    background-color: rgb(255, 255, 255, .25);
+}
+
+header.header-scroll img {
+    display: block;
+}
+
+header img {
+    height: 40px;
+    display: none;
+}
+
+#github {
+    padding: 1px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.acessar-div {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10000;
+    display: none;
+}
+
+.acessar-div .acessar-img {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: initial;
+    height: 100%;
+}
+
+.acessar-div .divp {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to top, #000, transparent, transparent);
+    box-shadow: inset 0px 0px 100px 20px black;
+    backdrop-filter: blur(5px);
+}
+
+.acessar-div .divp p {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-align: justify;
+    line-height: 20px;
+    width: 90%;
+    text-shadow: 
+               -2px -2px 0px #000, 
+               -2px 2px 0px #000,                    
+                2px -2px 0px #000,                  
+                2px 2px 0px #000,
+                0px 0px 20px #000;
+}
+
+.lugar {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-size: 50px;
+    color: #0ff;
+    text-shadow: 
+               -2px -2px 0px #fff, 
+               -2px 2px 0px #fff,                    
+                2px -2px 0px #fff,                  
+                2px 2px 0px #fff,
+                0px 0px 20px #0ff,
+                0px 0px 20px #0ff;
+}
+
+.acessar-div h3 {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    color: #fff;
+    text-shadow: 
+               -2px -2px 0px #000, 
+               -2px 2px 0px #000,                    
+                2px -2px 0px #000,                  
+                2px 2px 0px #000,
+                0px 0px 20px #000;
+}
+
+.acessar-div .acessar-btn, .acessar-div #acessar-sobre {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-decoration: none;
+    font-size: normal;
+    font-weight: bolder;
+    color: #000;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 3px solid black;
+    transition-duration: .5s;
+}
+
+.acessar-div .acessar-btn:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0px 0px 20px 10px #fff;
+}
+
+.acessar-div #acessar-sobre {
+    background-color: #666;
+    pointer-events: none;
+}
+
+.acessar-div .x {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, .5);
+    padding: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition-duration: .5s;
+    z-index: 10;
+}
+
+.acessar-div .x:hover {
+    transform: scale(1.1);
+}
+
+.x span {
+    font-weight: bolder;
+}
+
+main {
+    margin: auto;
+    width: 100vw;
+    padding-bottom: 50px;
+    background-image: url(../imagens/codigos3.png);
+    background-position: top center;
+    background-repeat: repeat;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+#top3-div {
+    --anima-brilho: #ff0;
+    --anima-brilho-escuro: #a0a000;
+    --anima-brilho-transparente: #ffff0080;
+    position: relative;
+    border-radius: 30px;
+    width: 100vw;
+    padding: 0px;
+    padding-top: 100px;
+    margin: 20px 0 80px 0;
+    animation: animacao-brilho 1s linear infinite;
+}
+
+#top3-div::before, #outros::before {
+    content: 'Top 3';
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 10px 10px 0px 0px;
+    text-transform: uppercase;
+    transform: translateX(-50%);
+    background-color: var(--anima-brilho);
+    animation: animacao-brilho-before 1s linear infinite;
+}
+
+#outros::before {
+    content: 'Todos os Sites';
+}
+
+#outros {
+    --anima-brilho: #0ff;
+    --anima-brilho-escuro: #00a0a0;
+    --anima-brilho-transparente: #00ffff80;
+    position: relative;
+    border-radius: 30px;
+    width: 100vw;
+    padding: 0px;
+    padding-top: 100px;
+    margin-bottom: 80px;
+    animation: animacao-brilho 1s linear infinite;
+}
+
+@keyframes animacao-brilho-before {
+    0% {
+        background-color: var(--anima-brilho);
+        box-shadow: 0px 0px 10px 5px var(--anima-brilho),
+            inset 0px 0px 10px 5px var(--anima-brilho);
+    }
+
+    50% {
+        background-color: var(--anima-brilho-escuro);
+        box-shadow: none;
+    }
+
+    100% {
+        background-color: var(--anima-brilho);
+        box-shadow: 0px 0px 10px 5px var(--anima-brilho),
+            inset 0px 0px 10px 5px var(--anima-brilho);
+    }
+}
+
+@keyframes animacao-brilho {
+    0% {
+        border: 5px solid var(--anima-brilho);
+        box-shadow: 0px 0px 10px 5px var(--anima-brilho),
+            inset 0px 0px 10px 5px var(--anima-brilho);
+    }
+
+    50% {
+        border: 5px solid var(--anima-brilho-escuro);
+        box-shadow: none;
+    }
+
+    100% {
+        border: 5px solid var(--anima-brilho);
+        box-shadow: 0px 0px 10px 5px var(--anima-brilho),
+            inset 0px 0px 10px 5px var(--anima-brilho);
+    }
+}
+
+h2 {
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    font-size: 50px;
+    text-align: center;
+    margin: 25px 0 75px 0;
+    background: linear-gradient(to right, #ff0, #0ff); /* Gradiente de cores */
+    -webkit-background-clip: text; /* Clip de texto para o gradiente */
+    background-clip: text;
+    color: transparent;
+}
+
+ol {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 50px;
+    list-style: none;
+    counter-reset: item;
+}
+
+ol li {
+    position: relative;
+    padding-bottom: 50px;
+}
+
+ol li::before {
+    content: counter(item) '.';
+    counter-increment: item;
+    position: absolute;
+    top: initial;
+    left: 50%;
+    bottom: 100%;
+    transform: translateX(-50%);
+    color: var(--anima-brilho);
+    font-size: 40px;
+    text-shadow: 
+               -2px -2px 0px #fff, 
+               -2px 2px 0px #fff,                    
+                2px -2px 0px #fff,                  
+                2px 2px 0px #fff,
+                0px 0px 20px var(--anima-brilho),
+                0px 0px 20px var(--anima-brilho);
+}
+
+.box-site {
+    height: 200px;
+    width: 300px;
+    border-radius: 20px;
+    margin-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: .5s;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(50px);
+    pointer-events: none;
+}
+
+.box-site.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+.nome-site {
+    position: absolute;
+    background-image: linear-gradient(to top, #000, transparent, transparent);
+    box-shadow: inset 0px 0px 25px 0px black;
+    border-radius: 15px;
+    width: 95%;
+    height: 95%;
+    z-index: 20;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding: 20px;
+}
+
+.nome-site p {
+    font-weight: bolder;
+    color: white;
+    text-shadow: 
+               -2px -2px 0px #000, 
+               -2px 2px 0px #000,                    
+                2px -2px 0px #000,                  
+                2px 2px 0px #000,
+                0px 0px 20px #000;
+}
+
+.borda {
+    height: 350px;
+    width: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: anima-borda 3s ease infinite;
+}
+
+@keyframes anima-borda {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.borda .b1,
+.borda .b2 {
+    width: 100%;
+    height: 50%;
+}
+
+.borda .b1 {
+    background-image: linear-gradient(to left, var(--anima-brilho), var(--anima-brilho-transparente));
+    box-shadow: -40px 0px 10px 0px var(--anima-brilho-transparente);
+}
+
+.borda .b2 {
+    background-image: linear-gradient(to right, var(--anima-brilho), var(--anima-brilho-transparente));
+    box-shadow: 40px 0px 10px 0px var(--anima-brilho-transparente);
+}
+
+.box-img {
+    background-color: #000;
+    width: 95%;
+    height: 95%;
+    z-index: 10;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: .5s;
+}
+
+.box-img img {
+    transition-duration: .5s;
+    height: 100%;
+}
+
+footer {
+    padding: 30px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logodiv {
+    padding: 20px;
+    border-radius: 30px;
+    background-color: white;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    transition-duration: .5s;
+    animation: animaLogo 1s linear infinite;
+    transform: scale(1);
+    cursor: pointer;
+}
+
+#logo {
+    background-color: transparent;
+    max-width: 150px;
+    border-radius: 20px;
+    transition-duration: .5s;
+}
+
+#logodiv:hover {
+    transform: scale(1.1);
+}

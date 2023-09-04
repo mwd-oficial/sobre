@@ -1,0 +1,102 @@
+.acessar-div .acessar-img {
+    width: 100%;
+    height: initial;
+}
+
+.acessar-div .divp p {
+    text-align: center;
+    width: initial;
+}
+
+.lugar {
+    top: -10px;
+    font-size: 100px;
+}
+
+.acessar-div h3 {
+    top: 10px;
+    font-size: 40px;
+}
+
+.nome-site {
+    display: none;
+}
+
+.box-site {
+    margin-bottom: 0;
+}
+.box-site:hover {
+    transform: scale(1.1);
+}
+
+.box-site:hover .borda,
+.box-site:hover .borda .b1,
+.box-site:hover .borda .b2 {
+    width: 350px;
+    box-shadow: none;
+    background-color: var(--anima-brilho);
+    background-image: none;
+}
+
+.box-site:hover .nome-site {
+    display: flex;
+}
+
+.box-img img {
+    filter: none;
+    transform: none;
+}
+
+.box-site:hover .box-img img {
+    transform: scale(1.1);
+}
+
+#divImg img {
+    width: 40%;
+}
+
+#top3-div::before, #outros::before {
+    padding: 10px 50px;
+}
+
+#top3-div, #outros {
+    width: initial;
+    padding: 50px;
+    padding-top: 50px;
+}
+
+ol li {
+    padding-left: 50px;
+}
+
+ol li::before {
+    left: 0;
+    top: 50%;
+    bottom: 0;
+    transform: translateY(-50%);
+}
+
+main {
+    background-size: initial;
+}
+
+h2 {
+    font-size: 10vw;
+}
+
+@media screen and (min-width:750px) {
+    ol {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width:1100px) {
+    ol {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    video {
+        height: initial;
+        width: 100vw;
+    }
+}
