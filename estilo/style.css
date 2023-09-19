@@ -164,6 +164,14 @@ header img {
     border-radius: 50%;
 }
 
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .acessar-div {
     position: fixed;
     top: 50%;
@@ -308,6 +316,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     overflow-x: hidden;
 }
 
@@ -395,10 +404,6 @@ main {
 }
 
 h2 {
-    position: relative;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
     display: inline-block;
     font-size: 50px;
     text-align: center;
@@ -443,8 +448,8 @@ ol li::before {
 }
 
 .box-site {
-    height: 200px;
     width: 300px;
+    height: 200px;
     border-radius: 20px;
     margin-bottom: 50px;
     position: relative;
@@ -463,6 +468,32 @@ ol li::before {
     opacity: 1;
     transform: translateY(0);
     pointer-events: all;
+}
+
+.box-site::before, .box-site::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    background-image: conic-gradient(transparent, transparent, transparent, var(--anima-brilho));
+    animation: anima-borda 3s linear infinite;
+}
+
+.box-site::after {
+    animation-delay: -1.5s;
+}
+
+@keyframes anima-borda {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
 .nome-site {
@@ -489,42 +520,6 @@ ol li::before {
                 2px -2px 0px #000,                  
                 2px 2px 0px #000,
                 0px 0px 20px #000;
-}
-
-.borda {
-    height: 350px;
-    width: 100px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: anima-borda 3s ease infinite;
-}
-
-@keyframes anima-borda {
-    0% {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-}
-
-.borda .b1,
-.borda .b2 {
-    width: 100%;
-    height: 50%;
-}
-
-.borda .b1 {
-    background-image: linear-gradient(to left, var(--anima-brilho), var(--anima-brilho-transparente));
-    box-shadow: -40px 0px 10px 0px var(--anima-brilho-transparente);
-}
-
-.borda .b2 {
-    background-image: linear-gradient(to right, var(--anima-brilho), var(--anima-brilho-transparente));
-    box-shadow: 40px 0px 10px 0px var(--anima-brilho-transparente);
 }
 
 .box-img {
