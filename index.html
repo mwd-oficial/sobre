@@ -4,20 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo/style.css">
-    <link rel="stylesheet" href="estilo/lands.css" media="screen and (orientation:landscape)">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="estilo/style.css">
+    <link rel="stylesheet" href="estilo/lands.css" media="screen and (orientation:landscape)">
     <title>Matgon's Website Development</title>
 </head>
 
 <body onload="inicia()">
     <div id="topo"></div>
+    <div id="cursor"></div>
 
     <div id="carregando">
-        <div style="margin: 20px 0px;" id="carregar"></div>
-        <p id="pcarregar">Carregando...</p>
+        <img src="imagens/logoMWDt.png" alt="" id="imgCarregar">
     </div>
 
     <div id="conteudo">
@@ -37,33 +38,57 @@
         <div id="divImg"><img src="imagens/logoMWDt.png" alt="" id="imglogo"></div>
 
         <main>
+            <section>
+                <h2>Como Programo</h2>
+                <div class="swiper mySwiper">
+                    <div class="box-site" id="box-swiper">
+                        <div id="back-swiper"></div>
+                    </div>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="imagens/html.png" alt=""></div>
+                        <div class="swiper-slide"><img src="imagens/css.png" alt=""></div>
+                        <div class="swiper-slide"><img src="imagens/js.png" alt=""></div>
+                        <div class="swiper-slide"><img src="imagens/php.png" alt="" id="php"></div>
+                    </div>
+                    <div class="swiper-button-prev setas"><span class="material-symbols-rounded">arrow_left</span></div>
+                    <div class="swiper-button-next setas"><span class="material-symbols-rounded">arrow_right</span>
+                    </div>
+                </div>
+                <p id="swiper-p"><strong>HTML (Hypertext Markup Language)</strong> é como a espinha dorsal da internet. Ele é usado para criar páginas da web e dizer ao navegador como exibir o conteúdo. Imagine o HTML como a estrutura de uma casa, definindo onde as paredes, portas e janelas devem estar. Ele lida com o conteúdo e a estrutura da página, como texto, imagens e links.</p>
+            </section>
             <section id="div-site">
                 <h2>Meus Sites</h2>
                 <div id="top3-div">
                     <ol>
                         <li>
-                            <div class="box-site" onclick="abrir(3)">
-                                <div class="box-img"><img src="imagens/astronomia.png" alt="">
-                                    <div class="nome-site">
-                                        <p>Astronomia</p>
+                            <div class="box-vanilla">
+                                <div class="box-site" onclick="abrir(3)">
+                                    <div class="box-img"><img src="imagens/astronomia.png" alt="">
+                                        <div class="nome-site">
+                                            <p>Astronomia</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </li>
                         <li>
-                            <div class="box-site" onclick="abrir(7)">
-                                <div class="box-img"><img src="imagens/jogodavelha.png" alt="">
-                                    <div class="nome-site">
-                                        <p>Jogo da Velha</p>
+                            <div class="box-vanilla">
+                                <div class="box-site" onclick="abrir(7)">
+                                    <div class="box-img"><img src="imagens/jogodavelha.png" alt="">
+                                        <div class="nome-site">
+                                            <p>Jogo da Velha</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </li>
                         <li>
-                            <div class="box-site" onclick="abrir(6)">
-                                <div class="box-img"><img src="imagens/resumo.png" alt="">
-                                    <div class="nome-site">
-                                        <p>Resumo</p>
+                            <div class="box-vanilla">
+                                <div class="box-site" onclick="abrir(6)">
+                                    <div class="box-img"><img src="imagens/resumo.png" alt="">
+                                        <div class="nome-site">
+                                            <p>Resumo</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -74,232 +99,318 @@
                     <ol>
                         <li>
                             <div class="acessar-div">
-                                <div class="x" onclick="fechar(0)"><span class="material-symbols-rounded">close</span>
+                                <a href="https://mwd-oficial.github.io/familiaware" target="_blank"
+                                    class="acessar-btn">Acessar</a>
+                                <div class="x" onclick="fechar(0)">
+                                    <span class="material-symbols-rounded">close</span>
                                 </div>
-                                <img src="imagens/familiaware.png" alt="" class="acessar-img">
-                                <div class="divp">
-                                    <div class="lugar">1°</div>
-                                    <a href="https://mwd-oficial.github.io/familiaware" target="_blank"
-                                        class="acessar-btn">Acessar</a>
-                                    <h3>Família Ware</h3>
-                                    <p>Este é o meu 1° site já feito, criado no dia 18 de Setembro de 2022. Trata-se de
-                                        um trabalho da matéria de PLE (Prática de Leitura e Escrita) em que tive que
-                                        escolher um assunto para apresentar. É sobre os 3 princiapais usos do sufixo
-                                        ware, as palavras software, hardware e malware.</p>
+                                <div class="scene">
+                                    <img src="imagens/familiaware.png" alt="" class="acessar-img" data-depth-x="-0.5">
+                                    <div class="divp scene">
+                                        <div class="lugar" data-depth-x="-0.5" data-depth-y="-0.5">1°</div>
+                                        <div class="h3Container" data-depth-x="-0.25" data-depth-y="-0.25">
+                                            <h3>Família Ware</h3>
+                                        </div>
+                                        <p data-depth-x="-0.25" data-depth-y="-0.25">Este é o meu 1° site já feito,
+                                            criado no dia 18 de Setembro de 2022. Trata-se de
+                                            um trabalho da matéria de PLE (Prática de Leitura e Escrita) em que tive que
+                                            escolher um assunto para apresentar. É sobre os 3 princiapais usos do sufixo
+                                            ware, as palavras software, hardware e malware.</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="box-site" onclick="abrir(0)">
-                                <div class="box-img"><img src="imagens/familiaware.png" alt="">
-                                    <div class="nome-site">
-                                        <p>Família Ware</p>
+                            <div class="box-vanilla">
+                                <div class="box-site" onclick="abrir(0)">
+                                    <div class="box-img"><img src="imagens/familiaware.png" alt="">
+                                        <div class="nome-site">
+                                            <p>Família Ware</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </li>
                         <li>
                             <div class="acessar-div">
-                                <div class="x" onclick="fechar(1)"><span class="material-symbols-rounded">close</span>
+                                <a href="https://mwd-oficial.github.io/mysterynews" target="_blank"
+                                    class="acessar-btn">Acessar</a>
+                                <div class="x" onclick="fechar(1)">
+                                    <span class="material-symbols-rounded">close</span>
                                 </div>
-                                <img src="imagens/mysterynews.png" alt="" class="acessar-img">
-                                <div class="divp">
-                                    <div class="lugar">2°</div>
-                                    <a href="https://mwd-oficial.github.io/mysterynews" target="_blank"
-                                        class="acessar-btn">Acessar</a>
-                                    <h3>Mysterynews</h3>
-                                    <p>Este é o meu 2° site já feito, criado no dia 29 de Outubro de 2022. Trata-se de
-                                        um trabalho de redação de uma narrativa de suspense cujo nome é "Os irmãos
-                                        Shelby".</p>
+                                <div class="scene">
+                                    <img src="imagens/mysterynews.png" alt="" class="acessar-img" data-depth-x="-0.5">
+                                    <div class="divp scene">
+                                        <div class="lugar" data-depth-x="-0.5" data-depth-y="-0.5">2°</div>
+                                        <div class="h3Container" data-depth-x="-0.25" data-depth-y="-0.25">
+                                            <h3>Mysterynews</h3>
+                                        </div>
+                                        <p data-depth-x="-0.25" data-depth-y="-0.25">Este é o meu 2° site já feito,
+                                            criado no dia 29 de Outubro de 2022. Trata-se de
+                                            um trabalho de redação de uma narrativa de suspense cujo nome é "Os irmãos
+                                            Shelby".</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="box-site" onclick="abrir(1)">
-                                <div class="box-img"><img src="imagens/mysterynews.png" alt="">
-                                    <div class="nome-site">
-                                        <p>Mystery News</p>
+                            <div class="box-vanilla">
+                                <div class="box-site" onclick="abrir(1)">
+                                    <div class="box-img"><img src="imagens/mysterynews.png" alt="">
+                                        <div class="nome-site">
+                                            <p>Mystery News</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </li>
                         <li>
                             <div class="acessar-div">
-                                <div class="x" onclick="fechar(2)"><span class="material-symbols-rounded">close</span>
+                                <a href="https://mwd-oficial.github.io/trabalhoespanhol" target="_blank"
+                                    class="acessar-btn">Acessar</a>
+                                <div class="x" onclick="fechar(2)">
+                                    <span class="material-symbols-rounded">close</span>
                                 </div>
-                                <img src="imagens/trabalhoespanhol.png" alt="" class="acessar-img">
-                                <div class="divp">
-                                    <div class="lugar">4°</div>
-                                    <a href="https://mwd-oficial.github.io/trabalhoespanhol" target="_blank"
-                                        class="acessar-btn">Acessar</a>
-                                    <h3>Trabalho de Espanhol</h3>
-                                    <p>Este é o meu 3° site já feito, criado no dia 2 de Novembro de 2022. Trata-se de
-                                        um trabalho de Espanhol sobre a biografia e discografia de um cantor espanhol
-                                        chamado Ricky Martin.</p>
-                                </div>
-                            </div>
-                            <div class="box-site" onclick="abrir(2)">
-                                <div class="box-img"><img src="imagens/trabalhoespanhol.png" alt="">
-                                    <div class="nome-site">
-                                        <p>Trabalho de Espanhol</p>
+                                <div class="scene">
+                                    <img src="imagens/trabalhoespanhol.png" alt="" class="acessar-img"
+                                        data-depth-x="-0.5">
+                                    <div class="divp scene">
+                                        <div class="lugar" data-depth-x="-0.5" data-depth-y="-0.5">3°</div>
+                                        <div class="h3Container" data-depth-x="-0.25" data-depth-y="-0.25">
+                                            <h3>Trabalho de Espanhol</h3>
+                                        </div>
+                                        <p data-depth-x="-0.25" data-depth-y="-0.25">Este é o meu 3° site já feito,
+                                            criado no dia 2 de Novembro de 2022. Trata-se de
+                                            um trabalho de Espanhol sobre a biografia e discografia de um cantor
+                                            espanhol
+                                            chamado Ricky Martin.</p>
                                     </div>
                                 </div>
                             </div>
-                        </li>
-                        <li>
-
-                            <div class="acessar-div">
-                                <div class="x" onclick="fechar(3)"><span class="material-symbols-rounded">close</span>
-                                </div>
-                                <img src="imagens/astronomia.png" alt="" class="acessar-img">
-                                <div class="divp">
-                                    <div class="lugar">4°</div>
-                                    <a href="https://mwd-oficial.github.io/astronomia" target="_blank"
-                                        class="acessar-btn">Acessar</a>
-                                    <h3>Astronomia</h3>
-                                    <p>Este é o meu 4° site já feito, criado no dia 9 de Novembro de 2022. Trata-se de
-                                        um trabalho de Física onde se explica tudo sobre o Sistema Solar, bem como os
-                                        fenômenos ocorridos no espaço, tal qual o Big Bang, movimentos terrestres e
-                                        lunares, eclipses, e muito mais.</p>
-                                </div>
-                            </div>
-                            <div class="box-site" onclick="abrir(3)">
-                                <div class="box-img"><img src="imagens/astronomia.png" alt="">
-                                    <div class="nome-site">
-                                        <p>Astronomia</p>
+                            <div class="box-vanilla">
+                                <div class="box-site" onclick="abrir(2)">
+                                    <div class="box-img"><img src="imagens/trabalhoespanhol.png" alt="">
+                                        <div class="nome-site">
+                                            <p>Trabalho de Espanhol</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </li>
                         <li>
                             <div class="acessar-div">
-                                <div class="x" onclick="fechar(4)"><span class="material-symbols-rounded">close</span>
+                                <a href="https://mwd-oficial.github.io/astronomia" target="_blank"
+                                    class="acessar-btn">Acessar</a>
+                                <div class="x" onclick="fechar(3)">
+                                    <span class="material-symbols-rounded">close</span>
                                 </div>
-                                <img src="imagens/decor.png" alt="" class="acessar-img">
-                                <div class="divp">
-                                    <div class="lugar">5°</div>
-                                    <a href="https://mwd-oficial.github.io/decor" target="_blank"
-                                        class="acessar-btn">Acessar</a>
-                                    <h3>Decor</h3>
-                                    <p>Este é o meu 5° site já feito, criado no dia 20 de Março de 2023. Trata-se de um
-                                        projeto próprio desenvolvido com uma ideia de um programa para decorar palavras.
-                                        Uma funcionalidade para matemática ainda não está disponível.</p>
+                                <div class="scene">
+                                    <img src="imagens/astronomia.png" alt="" class="acessar-img" data-depth-x="-0.5">
+                                    <div class="divp scene">
+                                        <div class="lugar" data-depth-x="-0.5" data-depth-y="-0.5">4°</div>
+                                        <div class="h3Container" data-depth-x="-0.25" data-depth-y="-0.25">
+                                            <h3>Astronomia</h3>
+                                        </div>
+                                        <p data-depth-x="-0.25" data-depth-y="-0.25">Este é o meu 4° site já feito,
+                                            criado no dia 9 de Novembro de 2022. Trata-se de
+                                            um trabalho de Física onde se explica tudo sobre o Sistema Solar, bem como
+                                            os
+                                            fenômenos ocorridos no espaço, tal qual o Big Bang, movimentos terrestres e
+                                            lunares, eclipses, e muito mais.</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="box-site" onclick="abrir(4)">
-                                <div class="box-img"><img src="imagens/decor.png" alt="">
-                                    <div class="nome-site">
-                                        <p>Decor</p>
+                            <div class="box-vanilla">
+                                <div class="box-site" onclick="abrir(3)">
+                                    <div class="box-img"><img src="imagens/astronomia.png" alt="">
+                                        <div class="nome-site">
+                                            <p>Astronomia</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </li>
                         <li>
                             <div class="acessar-div">
-                                <div class="x" onclick="fechar(5)"><span class="material-symbols-rounded">close</span>
+                                <a href="https://mwd-oficial.github.io/decor" target="_blank"
+                                    class="acessar-btn">Acessar</a>
+                                <div class="x" onclick="fechar(4)">
+                                    <span class="material-symbols-rounded">close</span>
                                 </div>
-                                <img src="imagens/brexit.png" alt="" class="acessar-img">
-                                <div class="divp">
-                                    <div class="lugar">6°</div>
-                                    <a href="https://mwd-oficial.github.io/brexit" target="_blank"
-                                        class="acessar-btn">Acessar</a>
-                                    <h3>Brexit</h3>
-                                    <p>Este é o meu 6° site já feito, criado no dia 28 de Abril de 2023. Trata-se de um
-                                        trabalho de Geografia, um semiário para apresentar sobre o Brexit, um movimento
-                                        de saída do Reino Unido da União Europeia.</p>
+                                <div class="scene">
+                                    <img src="imagens/decor.png" alt="" class="acessar-img" data-depth-x="-0.5">
+                                    <div class="divp scene">
+                                        <div class="lugar" data-depth-x="-0.5" data-depth-y="-0.5">5°</div>
+                                        <div class="h3Container" data-depth-x="-0.25" data-depth-y="-0.25">
+                                            <h3>Decor</h3>
+                                        </div>
+                                        <p data-depth-x="-0.25" data-depth-y="-0.25">Este é o meu 5° site já feito,
+                                            criado no dia 20 de Março de 2023. Trata-se de um
+                                            projeto próprio desenvolvido com uma ideia de um programa para decorar
+                                            palavras.
+                                            Uma funcionalidade para matemática ainda não está disponível.</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="box-site" onclick="abrir(5)">
-                                <div class="box-img"><img src="imagens/brexit.png" alt="">
-                                    <div class="nome-site">
-                                        <p>Brexit</p>
+                            <div class="box-vanilla">
+                                <div class="box-site" onclick="abrir(4)">
+                                    <div class="box-img"><img src="imagens/decor.png" alt="">
+                                        <div class="nome-site">
+                                            <p>Decor</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </li>
                         <li>
                             <div class="acessar-div">
-                                <div class="x" onclick="fechar(6)"><span class="material-symbols-rounded">close</span>
+                                <a href="https://mwd-oficial.github.io/brexit" target="_blank"
+                                    class="acessar-btn">Acessar</a>
+                                <div class="x" onclick="fechar(5)">
+                                    <span class="material-symbols-rounded">close</span>
                                 </div>
-                                <img src="imagens/resumo.png" alt="" class="acessar-img">
-                                <div class="divp">
-                                    <div class="lugar">7°</div>
-                                    <a href="https://mwd-oficial.github.io/resumo" target="_blank"
-                                        class="acessar-btn">Acessar</a>
-                                    <h3>Resumo</h3>
-                                    <p>Este é o meu 7° site já feito, criado no dia 30 de Maio de 2023. Trata-se de uma
-                                        página com uma série de resumos feitos pelo ChatGPT de livros a serem lidos que
-                                        cairão na prova para auxiliar os alunos.</p>
+                                <div class="scene">
+                                    <img src="imagens/brexit.png" alt="" class="acessar-img" data-depth-x="-0.5">
+                                    <div class="divp scene">
+                                        <div class="lugar" data-depth-x="-0.5" data-depth-y="-0.5">6°</div>
+                                        <div class="h3Container" data-depth-x="-0.25" data-depth-y="-0.25">
+                                            <h3>Brexit</h3>
+                                        </div>
+                                        <p data-depth-x="-0.25" data-depth-y="-0.25">Este é o meu 6° site já feito,
+                                            criado no dia 28 de Abril de 2023. Trata-se de um
+                                            trabalho de Geografia, um semiário para apresentar sobre o Brexit, um
+                                            movimento
+                                            de saída do Reino Unido da União Europeia.</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="box-site" onclick="abrir(6)">
-                                <div class="box-img"><img src="imagens/resumo.png" alt="">
-                                    <div class="nome-site">
-                                        <p>Resumo</p>
+                            <div class="box-vanilla">
+                                <div class="box-site" onclick="abrir(5)">
+                                    <div class="box-img"><img src="imagens/brexit.png" alt="">
+                                        <div class="nome-site">
+                                            <p>Brexit</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </li>
                         <li>
                             <div class="acessar-div">
-                                <div class="x" onclick="fechar(7)"><span class="material-symbols-rounded">close</span>
+                                <a href="https://mwd-oficial.github.io/resumo" target="_blank"
+                                    class="acessar-btn">Acessar</a>
+                                <div class="x" onclick="fechar(6)">
+                                    <span class="material-symbols-rounded">close</span>
                                 </div>
-                                <img src="imagens/jogodavelha.png" alt="" class="acessar-img">
-                                <div class="divp">
-                                    <div class="lugar">8°</div>
-                                    <a href="https://mwd-oficial.github.io/jogodavelha" target="_blank"
-                                        class="acessar-btn">Acessar</a>
-                                    <h3>Jogo da Velha</h3>
-                                    <p>Este é o meu 8° site já feito, criado no dia 30 de Junho de 2023. Trata-se de um
-                                        jogo da velha com design único, com muitas funcionalidades, nome do jogador
-                                        customizável, e 2 níveis de jogo: Contra o computador e multiplayer.</p>
+                                <div class="scene">
+                                    <img src="imagens/resumo.png" alt="" class="acessar-img" data-depth-x="-0.5">
+                                    <div class="divp scene">
+                                        <div class="lugar" data-depth-x="-0.5" data-depth-y="-0.5">7°</div>
+                                        <div class="h3Container" data-depth-x="-0.25" data-depth-y="-0.25">
+                                            <h3>Resumo</h3>
+                                        </div>
+                                        <p data-depth-x="-0.25" data-depth-y="-0.25">Este é o meu 7° site já feito,
+                                            criado no dia 30 de Maio de 2023. Trata-se de uma
+                                            página com uma série de resumos feitos pelo ChatGPT de livros a serem lidos
+                                            que
+                                            cairão na prova para auxiliar os alunos.</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="box-site" onclick="abrir(7)">
-                                <div class="box-img"><img src="imagens/jogodavelha.png" alt="">
-                                    <div class="nome-site">
-                                        <p>Jogo da Velha</p>
+                            <div class="box-vanilla">
+                                <div class="box-site" onclick="abrir(6)">
+                                    <div class="box-img"><img src="imagens/resumo.png" alt="">
+                                        <div class="nome-site">
+                                            <p>Resumo</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </li>
                         <li>
                             <div class="acessar-div">
-                                <div class="x" onclick="fechar(8)"><span class="material-symbols-rounded">close</span>
+                                <a href="https://mwd-oficial.github.io/jogodavelha" target="_blank"
+                                    class="acessar-btn">Acessar</a>
+                                <div class="x" onclick="fechar(7)">
+                                    <span class="material-symbols-rounded">close</span>
                                 </div>
-                                <img src="imagens/russia.png" alt="" class="acessar-img">
-                                <div class="divp">
-                                    <div class="lugar">9°</div>
-                                    <a href="https://mwd-oficial.github.io/russia" target="_blank"
-                                        class="acessar-btn">Acessar</a>
-                                    <h3>Rússia</h3>
-                                    <p>Este é o meu 9° site já feito, criado no dia 29 de Agosto de 2023. Trata-se de um
-                                        trabalho de Geografia, um semiário para apresentar os Aspectos Econômicos da
-                                        Rússia, que atua na agricultura e pecuária, recursos energéticos, industria,
-                                        população e conflitos.</p>
+                                <div class="scene">
+                                    <img src="imagens/jogodavelha.png" alt="" class="acessar-img" data-depth-x="-0.5">
+                                    <div class="divp scene">
+                                        <div class="lugar" data-depth-x="-0.5" data-depth-y="-0.5">8°</div>
+                                        <div class="h3Container" data-depth-x="-0.25" data-depth-y="-0.25">
+                                            <h3>Jogo da Velha</h3>
+                                        </div>
+                                        <p data-depth-x="-0.25" data-depth-y="-0.25">Este é o meu 8° site já feito,
+                                            criado no dia 30 de Junho de 2023. Trata-se de um
+                                            jogo da velha com design único, com muitas funcionalidades, nome do jogador
+                                            customizável, e 2 níveis de jogo: Contra o computador e multiplayer.</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="box-site" onclick="abrir(8)">
-                                <div class="box-img"><img src="imagens/russia.png" alt="">
-                                    <div class="nome-site">
-                                        <p>Rússia</p>
+                            <div class="box-vanilla">
+                                <div class="box-site" onclick="abrir(7)">
+                                    <div class="box-img"><img src="imagens/jogodavelha.png" alt="">
+                                        <div class="nome-site">
+                                            <p>Jogo da Velha</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </li>
                         <li>
                             <div class="acessar-div">
-                                <div class="x" onclick="fechar(9)"><span class="material-symbols-rounded">close</span>
+                                <a href="https://mwd-oficial.github.io/russia" target="_blank"
+                                    class="acessar-btn">Acessar</a>
+                                <div class="x" onclick="fechar(8)">
+                                    <span class="material-symbols-rounded">close</span>
                                 </div>
-                                <img src="imagens/sobre.png" alt="" class="acessar-img">
-                                <div class="divp">
-                                    <div class="lugar">10°</div>
-                                    <a href="" target="_blank" id="acessar-sobre">Você já está nesse site</a>
-                                    <h3>Sobre</h3>
-                                    <p>Este é o meu 10° site já feito, criado no dia 4 de Setembro de 2023. Trata-se de
-                                        um portfólio que contém todos os meus sites que já programei.</p>
+                                <div class="scene">
+                                    <img src="imagens/russia.png" alt="" class="acessar-img" data-depth-x="-0.5">
+                                    <div class="divp scene">
+                                        <div class="lugar" data-depth-x="-0.5" data-depth-y="-0.5">9°</div>
+                                        <div class="h3Container" data-depth-x="-0.25" data-depth-y="-0.25">
+                                            <h3>Rússia</h3>
+                                        </div>
+                                        <p data-depth-x="-0.25" data-depth-y="-0.25">Este é o meu 9° site já feito,
+                                            criado no dia 29 de Agosto de 2023. Trata-se de um
+                                            trabalho de Geografia, um semiário para apresentar os Aspectos Econômicos da
+                                            Rússia, que atua na agricultura e pecuária, recursos energéticos, industria,
+                                            população e conflitos.</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="box-site" onclick="abrir(9)">
-                                <div class="box-img"><img src="imagens/sobre.png" alt="">
-                                    <div class="nome-site">
-                                        <p>Sobre</p>
+                            <div class="box-vanilla">
+                                <div class="box-site" onclick="abrir(8)">
+                                    <div class="box-img"><img src="imagens/russia.png" alt="">
+                                        <div class="nome-site">
+                                            <p>Rússia</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="acessar-div">
+                                <a href="" target="_blank" id="acessar-sobre" class="acessar-btn">Você já está nesse
+                                    site</a>
+                                <div class="x" onclick="fechar(9)">
+                                    <span class="material-symbols-rounded">close</span>
+                                </div>
+                                <div class="scene">
+                                    <img src="imagens/sobre.png" alt="" class="acessar-img" data-depth-x="-0.5">
+                                    <div class="divp scene">
+                                        <div class="lugar" data-depth-x="-0.5" data-depth-y="-0.5">10°</div>
+                                        <div class="h3Container" data-depth-x="-0.25" data-depth-y="-0.25">
+                                            <h3>Sobre</h3>
+                                        </div>
+                                        <p data-depth-x="-0.25" data-depth-y="-0.25">Este é o meu 10° site já feito,
+                                            criado no dia 4 de Setembro de 2023. Trata-se de
+                                            um portfólio que contém todos os meus sites que já programei.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-vanilla">
+                                <div class="box-site" onclick="abrir(9)">
+                                    <div class="box-img"><img src="imagens/sobre.png" alt="">
+                                        <div class="nome-site">
+                                            <p>Sobre</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -312,7 +423,13 @@
         </footer>
     </div>
     </div>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
+    <script type="text/javascript" src="js/vanilla-tilt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"
+    integrity="sha512-/6TZODGjYL7M8qb7P6SflJB/nTGE79ed1RfJk3dfm/Ib6JwCT4+tOfrrseEHhxkIhwG8jCl+io6eaiWLS/UX1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/animacoes-externas.js"></script>
 </body>
 
 </html>

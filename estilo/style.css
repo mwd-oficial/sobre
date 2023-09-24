@@ -10,7 +10,6 @@
 :root {
     --anima-brilho: #000;
     --anima-brilho-escuro: #000;
-    --anima-brilho-transparente: #000;
 }
 
 ::selection {
@@ -43,13 +42,26 @@ html {
 
 body {
     text-align: justify;
-    font-family: 'Kalam', Arial, Helvetica, sans-serif ;
+    font-family: 'Kalam', Arial, Helvetica, sans-serif;
     background-image: url(../imagens/codigos-fundo.png);
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     overflow-x: hidden;
+}
+
+#cursor {
+    display: none;
+}
+
+#cursor::before {
+    content: '';
+    display: none;
+}
+
+.element {
+    display: none;
 }
 
 #carregando {
@@ -69,32 +81,23 @@ body {
     z-index: 999999;
 }
 
-#carregar {
-    background-color: transparent;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid #fff;
-    border-right: 10px solid #fff;
-    border-left: 10px solid #fff;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: preload .5s linear infinite;
-}
-
-#pcarregar {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bolder;
-    background-color: #000;
-    color: #fff;
-    margin: 0;
+#imgCarregar {
+    width: 200px;
+    animation: preload 1s ease infinite;
+    transform: scale(1);
 }
 
 @keyframes preload {
-    to {
-        transform: rotate(360deg);
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
     }
 }
 
@@ -164,12 +167,91 @@ header img {
     border-radius: 50%;
 }
 
-
 section {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.swiper {
+    width: 100vw;
+    height: 25vh;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: .3s;
+    filter: brightness(.5);
+    transform: scale(0.5) translateY(50%) !important;
+}
+
+.swiper-slide img {
+    display: block;
+    height: 80%;
+    object-fit: cover;
+}
+
+.swiper-slide img#php {
+    height: initial;
+    width: 80%;
+}
+
+.swiper-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.swiper-slide-active {
+    filter: brightness(1);
+    transform: scale(1) translateY(0) !important;
+}
+
+.setas {
+    display: none;
+}
+
+.swiper-button-prev::after, .swiper-button-next::after {
+    content: '';
+}
+
+.swiper-button-disabled {
+    opacity: 1 !important;
+    filter: brightness(.5);
+}
+
+#swiper-p {
+    width: 100vw;
+    color: #fff;
+    background-image: linear-gradient(135deg, #E14F25, #F16529);
+    padding: 20px;
+    margin: 50px 0;
+}
+
+#box-swiper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 40vw;
+    max-width: 400px;
+    pointer-events: none;
+}
+
+#back-swiper {
+    width: 95%;
+    height: 95%;
+    background-image: url(../imagens/codigos3.png);
+    background-position: center center;
+    background-size: cover;
+    border-radius: 15px;
+    z-index: 10;
 }
 
 .acessar-div {
@@ -185,7 +267,7 @@ section {
 }
 
 .acessar-div .acessar-img {
-    position: relative;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -194,7 +276,7 @@ section {
 }
 
 .acessar-div .divp {
-    position: fixed;
+    position: fixed !important;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -207,19 +289,21 @@ section {
 
 .acessar-div .divp p {
     position: absolute;
+    top: initial !important;
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     color: white;
     text-align: justify;
     line-height: 20px;
+    padding: 0;
     width: 90%;
-    text-shadow: 
-               -2px -2px 0px #000, 
-               -2px 2px 0px #000,                    
-                2px -2px 0px #000,                  
-                2px 2px 0px #000,
-                0px 0px 20px #000;
+    text-shadow:
+        -2px -2px 0px #000,
+        -2px 2px 0px #000,
+        2px -2px 0px #000,
+        2px 2px 0px #000,
+        0px 0px 20px #000;
 }
 
 .lugar {
@@ -228,35 +312,39 @@ section {
     left: 10px;
     font-size: 50px;
     color: #0ff;
-    text-shadow: 
-               -2px -2px 0px #fff, 
-               -2px 2px 0px #fff,                    
-                2px -2px 0px #fff,                  
-                2px 2px 0px #fff,
-                0px 0px 20px #0ff,
-                0px 0px 20px #0ff;
+    text-shadow:
+        -2px -2px 0px #fff,
+        -2px 2px 0px #fff,
+        2px -2px 0px #fff,
+        2px 2px 0px #fff,
+        0px 0px 20px #0ff,
+        0px 0px 20px #0ff;
+}
+
+.acessar-div .h3Container {
+    position: absolute;
+    top: 15px !important;
+    left: 50% !important;
 }
 
 .acessar-div h3 {
-    position: absolute;
-    top: 15px;
-    left: 50%;
     transform: translateX(-50%);
     font-size: 30px;
     color: #fff;
-    text-shadow: 
-               -2px -2px 0px #000, 
-               -2px 2px 0px #000,                    
-                2px -2px 0px #000,                  
-                2px 2px 0px #000,
-                0px 0px 20px #000;
+    text-shadow:
+        -2px -2px 0px #000,
+        -2px 2px 0px #000,
+        2px -2px 0px #000,
+        2px 2px 0px #000,
+        0px 0px 20px #000;
 }
 
-.acessar-div .acessar-btn, .acessar-div #acessar-sobre {
+.acessar-div .acessar-btn,
+.acessar-div #acessar-sobre {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%);
     font-size: normal;
     font-weight: bolder;
     text-align: center;
@@ -267,11 +355,7 @@ section {
     border-radius: 30px;
     border: 3px solid black;
     transition-duration: .5s;
-}
-
-.acessar-div .acessar-btn:hover {
-    transform: translate(-50%, -50%) scale(1.1);
-    box-shadow: 0px 0px 20px 10px #fff;
+    z-index: 10000 !important;
 }
 
 .acessar-div #acessar-sobre {
@@ -280,25 +364,22 @@ section {
 }
 
 .acessar-div .x {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+    position: absolute !important;
+    top: 10px !important;
+    left: initial !important;
+    right: 10px !important;
     width: 50px;
     height: 50px;
     background-color: #fff;
     box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, .5);
     padding: 20px;
     border-radius: 50%;
-    display: flex;
+    display: flex !important;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     transition-duration: .5s;
     z-index: 10;
-}
-
-.acessar-div .x:hover {
-    transform: scale(1.1);
 }
 
 .x span {
@@ -323,7 +404,6 @@ main {
 #top3-div {
     --anima-brilho: #ff0;
     --anima-brilho-escuro: #a0a000;
-    --anima-brilho-transparente: #ffff0080;
     position: relative;
     border-radius: 30px;
     width: 100vw;
@@ -333,7 +413,8 @@ main {
     animation: animacao-brilho 1s linear infinite;
 }
 
-#top3-div::before, #outros::before {
+#top3-div::before,
+#outros::before {
     content: 'Top 3';
     position: absolute;
     left: 50%;
@@ -355,7 +436,6 @@ main {
 #outros {
     --anima-brilho: #0ff;
     --anima-brilho-escuro: #00a0a0;
-    --anima-brilho-transparente: #00ffff80;
     position: relative;
     border-radius: 30px;
     width: 100vw;
@@ -407,9 +487,9 @@ h2 {
     display: inline-block;
     font-size: 50px;
     text-align: center;
-    margin: 25px 0 75px 0;
-    background: linear-gradient(to right, #ff0, #0ff); /* Gradiente de cores */
-    -webkit-background-clip: text; /* Clip de texto para o gradiente */
+    margin: 25px 0;
+    background: linear-gradient(to right, #ff0, #0ff);
+    -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
 }
@@ -438,13 +518,13 @@ ol li::before {
     transform: translateX(-50%);
     color: var(--anima-brilho);
     font-size: 40px;
-    text-shadow: 
-               -2px -2px 0px #fff, 
-               -2px 2px 0px #fff,                    
-                2px -2px 0px #fff,                  
-                2px 2px 0px #fff,
-                0px 0px 20px var(--anima-brilho),
-                0px 0px 20px var(--anima-brilho);
+    text-shadow:
+        -2px -2px 0px #fff,
+        -2px 2px 0px #fff,
+        2px -2px 0px #fff,
+        2px 2px 0px #fff,
+        0px 0px 20px var(--anima-brilho),
+        0px 0px 20px var(--anima-brilho);
 }
 
 .box-site {
@@ -476,8 +556,8 @@ ol li::before {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     background-image: conic-gradient(transparent, transparent, transparent, var(--anima-brilho));
     animation: anima-borda 3s linear infinite;
 }
@@ -498,8 +578,8 @@ ol li::before {
 
 .nome-site {
     position: absolute;
-    background-image: linear-gradient(to top, #000, transparent, transparent);
-    box-shadow: inset 0px 0px 25px 0px black;
+    background-image: linear-gradient(to top, black, transparent, transparent, transparent);
+    box-shadow: inset 0px 0px 25px 0px #000;
     border-radius: 15px;
     width: 95%;
     height: 95%;
@@ -512,14 +592,15 @@ ol li::before {
 }
 
 .nome-site p {
+    transition-duration: .5s;
     font-weight: bolder;
     color: white;
-    text-shadow: 
-               -2px -2px 0px #000, 
-               -2px 2px 0px #000,                    
-                2px -2px 0px #000,                  
-                2px 2px 0px #000,
-                0px 0px 20px #000;
+    text-shadow:
+        -2px -2px 0px #000,
+        -2px 2px 0px #000,
+        2px -2px 0px #000,
+        2px 2px 0px #000,
+        0px 0px 20px #000;
 }
 
 .box-img {
@@ -564,8 +645,4 @@ footer {
     max-width: 150px;
     border-radius: 20px;
     transition-duration: .5s;
-}
-
-#logodiv:hover {
-    transform: scale(1.1);
 }

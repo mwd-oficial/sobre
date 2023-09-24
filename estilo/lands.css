@@ -1,3 +1,82 @@
+* {
+    cursor: none !important;
+}
+
+#cursor {
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    border-top: 5px solid #0f0;
+    border-left: 5px solid #0f0;
+    transform-origin: top;
+    transform: translate(-1px, 1px) rotate(15deg);
+    pointer-events: none;
+    filter: drop-shadow(0 0 5px #0f0) drop-shadow(0 0 15px #0f0) drop-shadow(0 0 35px #0f0);
+    z-index: 100000 !important;
+    display: block;
+}
+
+#cursor::before {
+    content: '';
+    position: absolute;
+    left: -2.5px;
+    width: 5px;
+    height: 40px;
+    background-color: #0f0;
+    transform-origin: top;
+    transform: rotate(315deg);
+    display: block;
+}
+
+.element {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    color: #0f0;
+    pointer-events: none;
+    width: 10px;
+    height: 10px;
+    transition: 1s;
+    filter: drop-shadow(0 0 5px #0f0) drop-shadow(0 0 25px #0f0);
+    z-index: 100000 !important;
+    display: block;
+}
+
+.swiper {
+    width: 80vw;
+    height: 50vh;
+}
+
+#swiper-p {
+    width: 80vw;
+    border-radius: 20px;
+}
+
+.setas {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    box-shadow: 2.5px 2.5px 10px 0px #000;
+    padding: 10px;
+    border-radius: 50%;
+    transition-duration: .5s;
+}
+
+.setas span {
+    font-size: 50px;
+    color: #000;
+}
+
+.setas:hover {
+    transform: scale(1.1);
+}
+
+#back-swiper {
+    background-size: auto;
+}
+
 .acessar-div .acessar-img {
     width: 100%;
     height: initial;
@@ -6,6 +85,16 @@
 .acessar-div .divp p {
     text-align: center;
     width: initial;
+    padding: 0 20px;
+}
+
+.acessar-div .acessar-btn:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0px 0px 20px 10px #fff;
+}
+
+.acessar-div .x:hover {
+    transform: scale(1.1);
 }
 
 .lugar {
@@ -18,24 +107,14 @@
     font-size: 40px;
 }
 
-.nome-site {
-    display: none;
-}
-
 .box-site {
     margin-bottom: 0;
 }
+
 .box-site:hover {
     transform: scale(1.1);
-}
-
-.box-site:hover .borda,
-.box-site:hover .borda .b1,
-.box-site:hover .borda .b2 {
-    width: 350px;
-    box-shadow: none;
     background-color: var(--anima-brilho);
-    background-image: none;
+    box-shadow: 0px 0px 15px 10px var(--anima-brilho);
 }
 
 .box-site:hover .nome-site {
@@ -49,6 +128,27 @@
 
 .box-site:hover .box-img img {
     transform: scale(1.1);
+}
+
+.box-site:hover .nome-site {
+    background-image: linear-gradient(to top, var(--anima-brilho), transparent, transparent, transparent);
+    box-shadow: inset 0px 0px 25px 0px var(--anima-brilho);
+}
+
+.box-site:hover .nome-site p {
+    transform: scale(1.25);
+    text-shadow:
+        -2px -2px 0px #000,
+        -2px 2px 0px #000,
+        2px -2px 0px #000,
+        2px 2px 0px #000,
+        0px 0px 10px #000,
+        0px 0px 10px #000,
+        0px 0px 10px #000,
+        0px 0px 10px #000,
+        0px 0px 10px #000,
+        0px 0px 10px #000,
+        0px 0px 10px #000;
 }
 
 #divImg img {
@@ -82,6 +182,10 @@ main {
 
 h2 {
     font-size: 10vw;
+}
+
+#logodiv:hover {
+    transform: scale(1.1);
 }
 
 @media screen and (min-width:750px) {
