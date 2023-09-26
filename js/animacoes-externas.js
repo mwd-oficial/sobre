@@ -50,14 +50,14 @@ if (window.matchMedia("(orientation:landscape)").matches) {
                     document.documentElement.style.setProperty('--anima-brilho', cor1);
                 } else if (swiperSlide[2].classList.contains("swiper-slide-active")) {
                     cor1 = "#E5A228"
-                    cor2 = "#F1BF26"
+                    cor2 = "#F1DB4E"
                     texto = "<strong>JS (JavaScript)</strong> é como a eletricidade que torna sua casa funcional. Ele é uma linguagem de programação que permite adicionar interatividade às páginas da web. Isso significa que você pode criar formulários que respondem quando você clica neles, menus que se abrem quando você passa o mouse sobre eles e muito mais. O JavaScript torna as páginas da web dinâmicas e interativas."
-                    document.documentElement.style.setProperty('--anima-brilho', cor1);
+                    document.documentElement.style.setProperty('--anima-brilho', cor2);
                 } else if (swiperSlide[3].classList.contains("swiper-slide-active")) {
-                    cor1 = "#777BB3"
-                    cor2 = "#484C89"
+                    cor1 = "#484C89"
+                    cor2 = "#777BB3"
                     texto = "<strong>PHP (Hypertext Preprocessor)</strong> é como os bastidores de um teatro. É uma linguagem de programação usada principalmente em servidores web. Ela permite que os desenvolvedores criem sites que interagem com bancos de dados, processam formulários e fazem coisas mais complexas. PHP é responsável por muitas funcionalidades dinâmicas em sites, como enviar e-mails a partir de formulários ou mostrar informações de bancos de dados."
-                    document.documentElement.style.setProperty('--anima-brilho', cor1);
+                    document.documentElement.style.setProperty('--anima-brilho', cor2);
                 }
                 if (activeIndex > previousIndex) {
                     cnp++
