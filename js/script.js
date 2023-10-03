@@ -8,16 +8,35 @@ function inicia() {
 }
 
 var imglogo = document.querySelector("#imglogo")
+var secAnima = document.querySelector("#sec-anima")
 var header = document.querySelector("header")
 document.addEventListener("scroll", function() {
-  if (window.scrollY > 0) {
+  if (window.scrollY > 200) {
+    secAnima.style.opacity = 0
     imglogo.style.opacity = 0
     header.classList.add("header-scroll")
   } else {
+    secAnima.style.opacity = 1
     imglogo.style.opacity = 1
     header.classList.remove("header-scroll")
   }
 })
+
+var section = document.querySelector("section")
+var paleta = 0
+
+function animaPaletaf() {
+    setTimeout(() => {
+        paleta++
+        console.log(paleta)
+        if (paleta >= 360) {
+            paleta = 0
+        }
+        requestAnimationFrame(animaPaletaf)
+        section.style.filter = `hue-rotate(${paleta}deg)`
+    }, 10);
+}
+animaPaletaf()
 
 var cursor = document.querySelector("#cursor")
 var body = document.querySelector("body")

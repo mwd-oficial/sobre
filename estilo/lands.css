@@ -152,7 +152,11 @@
 }
 
 #divImg img {
-    width: 40%;
+    width: 30%;
+}
+
+section#sec-anima {
+    transform: scale(1.5);
 }
 
 #top3-div::before, #outros::before {
