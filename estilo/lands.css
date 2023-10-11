@@ -1,5 +1,10 @@
 * {
-    cursor: none !important;
+    cursor: auto;
+}
+
+#input-div {
+    width: initial;
+    border-radius: 0 20px 0 0;
 }
 
 #cursor {
@@ -12,7 +17,7 @@
     transform: translate(-1px, 1px) rotate(15deg);
     pointer-events: none;
     filter: drop-shadow(0 0 5px #0f0) drop-shadow(0 0 15px #0f0) drop-shadow(0 0 35px #0f0);
-    z-index: 100000 !important;
+    z-index: 0;
     display: block;
 }
 
@@ -39,7 +44,7 @@
     height: 10px;
     transition: 1s;
     filter: drop-shadow(0 0 5px #0f0) drop-shadow(0 0 25px #0f0);
-    z-index: 100000 !important;
+    z-index: 0;
     display: block;
 }
 

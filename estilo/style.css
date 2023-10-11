@@ -49,6 +49,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 #cursor {
@@ -62,6 +63,20 @@ body {
 
 .element {
     display: none;
+}
+
+#input-div {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    padding: 5px;
+    padding-top: 0;
+    box-shadow: 0px 0px 15px 15px #000;
+    z-index: 1000;
 }
 
 #carregando {
@@ -78,7 +93,7 @@ body {
     width: 110vw;
     height: 110vh;
     overflow: hidden;
-    z-index: 999999;
+    z-index: 999;
 }
 
 #imgCarregar {
@@ -204,7 +219,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 10px;
-    z-index: 1000;
+    z-index: 100;
     transition-duration: .5s;
 }
 
@@ -325,6 +340,10 @@ section {
     z-index: 10;
 }
 
+.box-vanilla {
+    position: relative;
+}
+
 .acessar-div {
     position: fixed;
     top: 50%;
@@ -333,7 +352,7 @@ section {
     background-color: #000;
     width: 100vw;
     height: 100vh;
-    z-index: 10000;
+    z-index: 1000;
     display: none;
 }
 
@@ -481,6 +500,7 @@ main {
     padding: 0px;
     padding-top: 100px;
     margin: 20px 0 80px 0;
+    border: 5px solid var(--anima-brilho);
     animation: animacao-brilho 1s linear infinite;
 }
 
@@ -513,6 +533,7 @@ main {
     padding: 0px;
     padding-top: 100px;
     margin-bottom: 80px;
+    border: 5px solid var(--anima-brilho);
     animation: animacao-brilho 1s linear infinite;
 }
 

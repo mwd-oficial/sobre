@@ -1,16 +1,26 @@
 var carregando = document.getElementById("carregando")
 var conteudo = document.getElementById("conteudo")
+var element = document.querySelectorAll(".element")
+
 function inicia() {
-    setTimeout(() => {
-        carregando.style.display = "none"
-        conteudo.style.display = "block"
-    }, 1000);
+  setTimeout(() => {
+    body.style.overflowY = "auto"
+    carregando.style.display = "none"
+    conteudo.style.display = "block"
+    cursor.style.zIndex = 1001
+    var style = document.createElement('style');
+    style.innerHTML = `*{cursor: none !important}`
+    document.head.appendChild(style);
+    for (let i = 0; i < element.length; i++) {
+      element[i].style.zIndex = 1001
+    }
+  }, 1000);
 }
 
 var imglogo = document.querySelector("#imglogo")
 var secAnima = document.querySelector("#sec-anima")
 var header = document.querySelector("header")
-document.addEventListener("scroll", function() {
+document.addEventListener("scroll", function () {
   if (window.scrollY > 200) {
     secAnima.style.opacity = 0
     imglogo.style.opacity = 0
@@ -26,21 +36,20 @@ var section = document.querySelector("section")
 var paleta = 0
 
 function animaPaletaf() {
-    setTimeout(() => {
-        paleta++
-        console.log(paleta)
-        if (paleta >= 360) {
-            paleta = 0
-        }
-        requestAnimationFrame(animaPaletaf)
-        section.style.filter = `hue-rotate(${paleta}deg)`
-    }, 10);
+  setTimeout(() => {
+    paleta++
+    if (paleta >= 360) {
+      paleta = 0
+    }
+    requestAnimationFrame(animaPaletaf)
+    section.style.filter = `hue-rotate(${paleta}deg)`
+  }, 10);
 }
 animaPaletaf()
 
 var cursor = document.querySelector("#cursor")
 var body = document.querySelector("body")
-document.onmousemove = function(e) {
+document.onmousemove = function (e) {
   cursor.style.top = e.clientY + 'px'
   cursor.style.left = e.clientX + 'px'
 
@@ -51,10 +60,10 @@ document.onmousemove = function(e) {
   element.style.top = e.pageY + 'px'
   element.style.left = e.pageX + 'px'
 
-  setTimeout(function() {
+  setTimeout(function () {
     let text = document.querySelectorAll('.element')[0],
-    directionX = Math.random() < .5 ? -1 : 1,
-    directionY = Math.random() < .5 ? -1 : 1
+      directionX = Math.random() < .5 ? -1 : 1,
+      directionY = Math.random() < .5 ? -1 : 1
 
     text.style.left = parseInt(text.style.left) - (directionX * (Math.random() * 200)) + 'px'
     text.style.top = parseInt(text.style.top) - (directionY * (Math.random() * 200)) + 'px'
@@ -62,7 +71,7 @@ document.onmousemove = function(e) {
     text.style.transform = 'scale(0.25)'
     text.innerHTML = randomText()
 
-    setTimeout(function() {
+    setTimeout(function () {
       element.remove()
     }, 1000);
 
@@ -77,13 +86,13 @@ function randomText() {
 
 var acessarDiv = document.querySelectorAll(".acessar-div")
 function abrir(n) {
-    acessarDiv[n].style.display = "block"
-    body.style.overflowY = "hidden"
+  acessarDiv[n].style.display = "block"
+  body.style.overflowY = "hidden"
 }
 
 function fechar(n) {
-    acessarDiv[n].style.display = "none"
-    body.style.overflowY = "initial"
+  acessarDiv[n].style.display = "none"
+  body.style.overflowY = "initial"
 }
 
 var boxSite = document.querySelectorAll(".box-site");

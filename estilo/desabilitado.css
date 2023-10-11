@@ -1,0 +1,24 @@
+body.desabilitado #cursor, body.desabilitado .element, body.desabilitado #divVideo, body.desabilitado #sec-anima {
+    display: none;
+}
+body.desabilitado * {
+    cursor: auto !important;
+}
+body.desabilitado #imgCarregar,
+body.desabilitado .loader span::before,
+body.desabilitado #top3-div,
+body.desabilitado #top3-div::before,
+body.desabilitado #outros::before,
+body.desabilitado #outros,
+body.desabilitado .box-site::before,
+body.desabilitado .box-site::after,
+body.desabilitado #logodiv{
+    animation: none;
+}
+
+body.desabilitado .box-site, body.desabilitado .box-site::before,
+body.desabilitado .box-site::after{
+    transform: none;
+    opacity: 1;
+    background-color: var(--anima-brilho);
+}
