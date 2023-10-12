@@ -1,5 +1,5 @@
 * {
-    cursor: auto;
+    cursor: none !important;
 }
 
 #input-div {
@@ -17,8 +17,7 @@
     transform: translate(-1px, 1px) rotate(15deg);
     pointer-events: none;
     filter: drop-shadow(0 0 5px #0f0) drop-shadow(0 0 15px #0f0) drop-shadow(0 0 35px #0f0);
-    z-index: 0;
-    display: block;
+    z-index: 1001;
 }
 
 #cursor::before {
@@ -30,7 +29,6 @@
     background-color: #0f0;
     transform-origin: top;
     transform: rotate(315deg);
-    display: block;
 }
 
 .element {
@@ -44,8 +42,7 @@
     height: 10px;
     transition: 1s;
     filter: drop-shadow(0 0 5px #0f0) drop-shadow(0 0 25px #0f0);
-    z-index: 0;
-    display: block;
+    z-index: 1001;
 }
 
 .swiper {
@@ -116,13 +113,17 @@
     margin-bottom: 0;
 }
 
-.box-site:hover {
+.box-site:hover, .des-van-div:hover ~ .box-vanilla .box-site {
     transform: scale(1.1);
     background-color: var(--anima-brilho);
     box-shadow: 0px 0px 15px 10px var(--anima-brilho);
 }
 
-.box-site:hover .nome-site {
+.des-van-div:hover {
+    transform: scale(1.125);
+}
+
+.box-site:hover .nome-site, .des-van-div:hover ~ .box-vanilla .box-site .nome-site {
     display: flex;
 }
 
@@ -131,16 +132,17 @@
     transform: none;
 }
 
-.box-site:hover .box-img img {
+
+.box-site:hover .box-img img, .des-van-div:hover ~ .box-vanilla .box-site .box-img img {
     transform: scale(1.1);
 }
 
-.box-site:hover .nome-site {
+.box-site:hover .nome-site, .des-van-div:hover ~ .box-vanilla .box-site .nome-site {
     background-image: linear-gradient(to top, var(--anima-brilho), transparent, transparent, transparent);
     box-shadow: inset 0px 0px 25px 0px var(--anima-brilho);
 }
 
-.box-site:hover .nome-site p {
+.box-site:hover .nome-site p, .des-van-div:hover ~ .box-vanilla .box-site .nome-site p {
     transform: scale(1.25);
     text-shadow:
         -2px -2px 0px #000,

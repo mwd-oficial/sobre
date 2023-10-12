@@ -1,19 +1,11 @@
 var carregando = document.getElementById("carregando")
 var conteudo = document.getElementById("conteudo")
-var element = document.querySelectorAll(".element")
 
 function inicia() {
   setTimeout(() => {
     body.style.overflowY = "auto"
     carregando.style.display = "none"
     conteudo.style.display = "block"
-    cursor.style.zIndex = 1001
-    var style = document.createElement('style');
-    style.innerHTML = `*{cursor: none !important}`
-    document.head.appendChild(style);
-    for (let i = 0; i < element.length; i++) {
-      element[i].style.zIndex = 1001
-    }
   }, 1000);
 }
 
@@ -121,6 +113,12 @@ function animaScroll() {
 
 // Execute a função inicialmente para as caixas visíveis na primeira carga da página
 animaScroll();
+window.addEventListener('scroll', animaScroll);
 
-window.addEventListener("scroll", animaScroll);
 
+var progresso = document.querySelector("#progresso");
+window.addEventListener("scroll", function() {
+  var alturaTotal = document.body.scrollHeight - window.innerHeight;
+  var progressoAtual = (window.scrollY / alturaTotal) * 100;
+  progresso.style.width = progressoAtual + "%";
+});

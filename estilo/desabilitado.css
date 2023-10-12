@@ -12,7 +12,7 @@ body.desabilitado #outros::before,
 body.desabilitado #outros,
 body.desabilitado .box-site::before,
 body.desabilitado .box-site::after,
-body.desabilitado #logodiv{
+body.desabilitado #logodiv {
     animation: none;
 }
 
@@ -21,4 +21,8 @@ body.desabilitado .box-site::after{
     transform: none;
     opacity: 1;
     background-color: var(--anima-brilho);
+}
+
+body.desabilitado #box-swiper {
+    transition-duration: 0s;    
 }

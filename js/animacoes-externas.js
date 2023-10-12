@@ -1,16 +1,23 @@
 var checkbox = document.querySelector("#anima-input")
 var body = document.querySelector("body")
 var scenes = document.querySelectorAll(".scene");
+var desVanDiv = document.querySelectorAll(".des-van-div")
 var parallaxes = [];
 
 checkbox.addEventListener('change', function () {
     if (this.checked) {
-        document.body.classList.add("desabilitado");
+        body.classList.add("desabilitado");
+        for (let i = 0; i < desVanDiv.length; i++) {
+            desVanDiv[i].style.display = "block"
+        }
         parallaxes.forEach((parallax) => {
             parallax.disable();
         });
     } else {
-        document.body.classList.remove("desabilitado");
+        body.classList.remove("desabilitado");
+        for (let i = 0; i < desVanDiv.length; i++) {
+            desVanDiv[i].style.display = "none"
+        }
         parallaxes.forEach((parallax) => {
             parallax.enable();
         });
