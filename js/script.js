@@ -9,6 +9,20 @@ function inicia() {
   }, 1000);
 }
 
+var title = document.querySelector("title")
+var emojis = ['1F916', '1F5A5', '1F47E', '1F468']
+let i = 0
+
+setInterval(() => {
+  title.innerHTML = `MWD&#x${emojis[i]}`
+  if (i < emojis.length - 1) {
+    i++
+  } else {
+    i = 0
+  }
+
+}, 500);
+
 var imglogo = document.querySelector("#imglogo")
 var secAnima = document.querySelector("#sec-anima")
 var header = document.querySelector("header")
@@ -117,7 +131,7 @@ window.addEventListener('scroll', animaScroll);
 
 
 var progresso = document.querySelector("#progresso");
-window.addEventListener("scroll", function() {
+window.addEventListener("scroll", function () {
   var alturaTotal = document.body.scrollHeight - window.innerHeight;
   var progressoAtual = (window.scrollY / alturaTotal) * 100;
   progresso.style.width = progressoAtual + "%";
