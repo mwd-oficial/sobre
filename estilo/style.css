@@ -12,10 +12,6 @@
     --anima-brilho-escuro: #000;
 }
 
-::selection {
-    background-color: transparent;
-}
-
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -50,6 +46,11 @@ body {
     background-attachment: fixed;
     overflow-x: hidden;
     overflow-y: hidden;
+    
+    -webkit-user-select: none;  /* Chrome, Safari, Opera */
+    -moz-user-select: none;     /* Firefox */
+    -ms-user-select: none;      /* IE/Edge */
+    user-select: none;          /* Standard syntax */
 }
 
 #input-div {
