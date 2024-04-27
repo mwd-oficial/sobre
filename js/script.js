@@ -14,7 +14,7 @@ var emojis = ['1F916', '1F5A5', '1F47E', '1F468']
 let i = 0
 
 setInterval(() => {
-  title.innerHTML = `MWD&#x${emojis[i]}`
+  title.innerHTML = `MWD &#x${emojis[i]}`
   if (i < emojis.length - 1) {
     i++
   } else {
@@ -26,17 +26,39 @@ setInterval(() => {
 var imglogo = document.querySelector("#imglogo")
 var secAnima = document.querySelector("#sec-anima")
 var header = document.querySelector("header")
+var modelViewer = document.querySelector("model-viewer")
 document.addEventListener("scroll", function () {
   if (window.scrollY > 200) {
     secAnima.style.opacity = 0
     imglogo.style.opacity = 0
+    modelViewer.style.opacity = 0
     header.classList.add("header-scroll")
   } else {
     secAnima.style.opacity = 1
     imglogo.style.opacity = 1
+    modelViewer.style.opacity = 1
     header.classList.remove("header-scroll")
   }
 })
+
+var mouseModelViewer = false
+modelViewer.addEventListener("mouseover", function () {
+  cursor.style.display = "none"
+  mouseModelViewer = true
+})
+
+modelViewer.addEventListener("mouseleave", function () {
+  cursor.style.display = "block"
+  mouseModelViewer = false
+})
+
+var images = document.getElementsByTagName('img');
+for (let i = 0; i < images.length; i++) {
+  images[i].onmousedown = function (e) {
+    if (e.preventDefault) e.preventDefault();
+    return false;
+  }
+}
 
 var section = document.querySelector("section")
 var paleta = 0
@@ -56,32 +78,34 @@ animaPaletaf()
 var cursor = document.querySelector("#cursor")
 var body = document.querySelector("body")
 document.onmousemove = function (e) {
-  cursor.style.top = e.clientY + 'px'
-  cursor.style.left = e.clientX + 'px'
+  if (!mouseModelViewer) {
+    cursor.style.top = e.clientY + 'px'
+    cursor.style.left = e.clientX + 'px'
 
-  let element = document.createElement('div')
-  element.classList = 'element'
-  body.prepend(element)
+    let element = document.createElement('div')
+    element.classList = 'element'
+    body.prepend(element)
 
-  element.style.top = e.pageY + 'px'
-  element.style.left = e.pageX + 'px'
-
-  setTimeout(function () {
-    let text = document.querySelectorAll('.element')[0],
-      directionX = Math.random() < .5 ? -1 : 1,
-      directionY = Math.random() < .5 ? -1 : 1
-
-    text.style.left = parseInt(text.style.left) - (directionX * (Math.random() * 200)) + 'px'
-    text.style.top = parseInt(text.style.top) - (directionY * (Math.random() * 200)) + 'px'
-    text.style.opacity = 0
-    text.style.transform = 'scale(0.25)'
-    text.innerHTML = randomText()
+    element.style.top = e.pageY + 'px'
+    element.style.left = e.pageX + 'px'
 
     setTimeout(function () {
-      element.remove()
-    }, 1000);
+      let text = document.querySelectorAll('.element')[0],
+        directionX = Math.random() < .5 ? -1 : 1,
+        directionY = Math.random() < .5 ? -1 : 1
 
-  }, 10);
+      text.style.left = parseInt(text.style.left) - (directionX * (Math.random() * 200)) + 'px'
+      text.style.top = parseInt(text.style.top) - (directionY * (Math.random() * 200)) + 'px'
+      text.style.opacity = 0
+      text.style.transform = 'scale(0.25)'
+      text.innerHTML = randomText()
+
+      setTimeout(function () {
+        element.remove()
+      }, 1000);
+
+    }, 10);
+  }
 }
 
 function randomText() {

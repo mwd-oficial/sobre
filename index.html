@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="estilo/style.css">
     <link rel="stylesheet" href="estilo/desabilitado.css">
     <link rel="stylesheet" href="estilo/lands.css" media="screen and (orientation:landscape)">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <title id="titulo">MWD</title>
 </head>
 
@@ -18,7 +19,7 @@
     <div id="topo"></div>
     <div id="cursor"></div>
     <div id="input-div">
-        <label for="anima-input">Desabilitar Animações: </label>
+        <label for="anima-input">Desabilitar Animações (Ctrl): </label>
         <input type="checkbox" name="" id="anima-input">
     </div>
 
@@ -43,6 +44,9 @@
 
         <div id="divImg">
             <img src="imagens/logomwdt.webp" alt="" id="imglogo">
+            <model-viewer src="logomwdt.glb" loading="eager" min-field-of-view="45deg" 
+                rotation-per-second="45deg" camera-controls disable-pan disable-zoom
+                interaction-prompt-style="basic"></model-viewer>
             <section id="sec-anima">
                 <div class="loader" style="--r:1;">
                     <span style="--i:1;"></span>
@@ -544,7 +548,9 @@
                                             <h3>Fnafão</h3>
                                         </div>
                                         <p data-depth-x="-0.25" data-depth-y="-0.25">Este é o meu 11° site já feito,
-                                            criado no dia 30 de Janeiro de 2024, um jogo totalmente feito com apenas html, css e js. Trata-se de um "fangame" de fnaf (Five Nights at Freddy's), usando mecânicas e lógicas parecidas.</p>
+                                            criado no dia 30 de Janeiro de 2024, um jogo totalmente feito com apenas
+                                            html, css e js. Trata-se de um "fangame" de fnaf (Five Nights at Freddy's),
+                                            usando mecânicas e lógicas parecidas.</p>
                                     </div>
                                 </div>
                             </div>
@@ -574,7 +580,11 @@
                                             <h3>OBR - Arduino</h3>
                                         </div>
                                         <p data-depth-x="-0.25" data-depth-y="-0.25">Este é o meu 12° site já feito,
-                                            criado no dia 27 de Fevereiro de 2024. Trata-se de uma apresentação sobre a questão 16 de uma das provas da OBR (Olimpíada Brasileira de Robótica). Esta questão retrata o funcionamento de um código usado para alternar o estado (ligado e desligado) de 2 leds controlados pelo Arduino. Esse projeto também foi executado na prática pela plataforma Tinkercad.</p>
+                                            criado no dia 27 de Fevereiro de 2024. Trata-se de uma apresentação sobre a
+                                            questão 16 de uma das provas da OBR (Olimpíada Brasileira de Robótica). Esta
+                                            questão retrata o funcionamento de um código usado para alternar o estado
+                                            (ligado e desligado) de 2 leds controlados pelo Arduino. Esse projeto também
+                                            foi executado na prática pela plataforma Tinkercad.</p>
                                     </div>
                                 </div>
                             </div>

@@ -4,8 +4,29 @@ var scenes = document.querySelectorAll(".scene");
 var desVanDiv = document.querySelectorAll(".des-van-div")
 var parallaxes = [];
 
-checkbox.addEventListener('change', function () {
-    if (this.checked) {
+var ctrlPressionado = false;
+document.addEventListener("keydown", function (e) {
+    if (e.key === "Control" && !ctrlPressionado) {
+        ctrlPressionado = true;
+        if (checkbox.checked) {
+            checkbox.checked = false;
+        } else {
+            checkbox.checked = true;
+        }
+        desabilitarAnimacoes();
+    }
+})
+
+document.addEventListener("keyup", function (e) {
+    if (e.key === "Control") {
+        ctrlPressionado = false;
+    }
+})
+
+
+checkbox.addEventListener('change', desabilitarAnimacoes)
+function desabilitarAnimacoes() {
+    if (checkbox.checked) {
         body.classList.add("desabilitado");
         for (let i = 0; i < desVanDiv.length; i++) {
             desVanDiv[i].style.display = "block"
@@ -13,6 +34,7 @@ checkbox.addEventListener('change', function () {
         parallaxes.forEach((parallax) => {
             parallax.disable();
         });
+        modelViewer.cameraOrbit = "0rad 1.3089969389957472rad 250.82152455642415m"
     } else {
         body.classList.remove("desabilitado");
         for (let i = 0; i < desVanDiv.length; i++) {
@@ -22,7 +44,7 @@ checkbox.addEventListener('change', function () {
             parallax.enable();
         });
     }
-});
+}
 
 if (window.matchMedia("(orientation:landscape)").matches) {
 

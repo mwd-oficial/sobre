@@ -46,11 +46,15 @@ body {
     background-attachment: fixed;
     overflow-x: hidden;
     overflow-y: hidden;
-    
-    -webkit-user-select: none;  /* Chrome, Safari, Opera */
-    -moz-user-select: none;     /* Firefox */
-    -ms-user-select: none;      /* IE/Edge */
-    user-select: none;          /* Standard syntax */
+
+    -webkit-user-select: none;
+    /* Chrome, Safari, Opera */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE/Edge */
+    user-select: none;
+    /* Standard syntax */
 }
 
 #input-div {
@@ -61,8 +65,7 @@ body {
     text-align: center;
     background-color: #000;
     color: #fff;
-    padding: 5px;
-    padding-top: 0;
+    padding: 0 10px 5px 10px;
     box-shadow: 0px 0px 15px 15px #000;
     z-index: 1000;
 }
@@ -129,15 +132,25 @@ video {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-}
 
-#divImg img {
-    position: absolute;
-    width: 75%;
-    opacity: 1;
-    transition-duration: .5s;
-    z-index: 1;
-    -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, #0005);
+    & img {
+        position: absolute;
+        width: 75%;
+        opacity: 1;
+        transition-duration: .5s;
+        z-index: 1;
+        -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, #0005);
+        display: none;
+    }
+
+    & model-viewer {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+        transition-duration: .5s;
+        z-index: 1;
+    }
 }
 
 section#sec-anima {
@@ -172,11 +185,11 @@ section#sec-anima {
     background-color: #00ff0a;
     border-radius: 50%;
     box-shadow: 0 0 10px #00ff0a,
-    0 0 20px #00ff0a,
-    0 0 40px #00ff0a,
-    0 0 60px #00ff0a,
-    0 0 80px #00ff0a,
-    0 0 100px #00ff0a;
+        0 0 20px #00ff0a,
+        0 0 40px #00ff0a,
+        0 0 60px #00ff0a,
+        0 0 80px #00ff0a,
+        0 0 100px #00ff0a;
     animation: animate 5s linear infinite;
     animation-delay: calc(-0.5s * var(--i));
 }
@@ -186,12 +199,15 @@ section#sec-anima {
         transform: translateX(200px) scale(1);
         opacity: 0;
     }
+
     10% {
         opacity: 1;
     }
+
     80% {
         opacity: 1;
     }
+
     100% {
         transform: translateX(0px) scale(0);
         opacity: 1;
@@ -293,7 +309,8 @@ section {
     display: none;
 }
 
-.swiper-button-prev::after, .swiper-button-next::after {
+.swiper-button-prev::after,
+.swiper-button-next::after {
     content: '';
 }
 
@@ -309,7 +326,7 @@ section {
     padding: 20px;
     margin: 50px 0;
     text-shadow: 0px 0px 5px black,
-                 0px 0px 10px black;
+        0px 0px 10px black;
 }
 
 #box-swiper {
@@ -591,10 +608,21 @@ h2 {
     font-size: 50px;
     text-align: center;
     margin: 25px 0;
-    background: linear-gradient(to right, #ff0, #0ff);
+    background: linear-gradient(to right, #ff0, #0ff, #ff0);
+    background-size: 300%;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    animation: anima-cor 5s linear infinite;
+}
+
+@keyframes anima-cor {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 300% 0;
+    }
 }
 
 ol {
@@ -653,7 +681,8 @@ ol li::before {
     pointer-events: all;
 }
 
-.box-site::before, .box-site::after {
+.box-site::before,
+.box-site::after {
     content: '';
     position: absolute;
     top: 50%;
