@@ -52,6 +52,14 @@ modelViewer.addEventListener("mouseleave", function () {
   mouseModelViewer = false
 })
 
+var btnAtalho = document.querySelector("#btn-atalho")
+setInterval(() => {
+  btnAtalho.style.animation = "animaBtnAtalho 1s infinite"
+  setTimeout(() => {
+    btnAtalho.style.animation = "none"
+  }, 2000);
+}, 3000);
+
 var images = document.getElementsByTagName('img');
 for (let i = 0; i < images.length; i++) {
   images[i].onmousedown = function (e) {

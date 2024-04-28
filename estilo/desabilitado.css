@@ -40,6 +40,10 @@ body.desabilitado {
         display: block;
     }
 
+    & #btn-atalho, & #btn-atalho span {
+        cursor: pointer !important;
+    }
+
     & h2 {
         background: linear-gradient(to right, #ff0, #0ff);
         -webkit-background-clip: text;

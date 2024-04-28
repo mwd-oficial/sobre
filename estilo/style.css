@@ -214,6 +214,42 @@ section#sec-anima {
     }
 }
 
+#btn-atalho {
+    position: absolute;
+    bottom: 10%;
+    background-color: #fff;
+    color: black;
+    width: 50px;
+    height: 50px;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: none;
+    transition-duration: .5s;
+    transform: translate(0, 0) scale(1);
+    animation: none;
+    z-index: 10;
+}
+
+@keyframes animaBtnAtalho {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(0, 20px) scale(1.2);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}
+
 header {
     position: sticky;
     top: 0px;
@@ -618,10 +654,10 @@ h2 {
 
 @keyframes anima-cor {
     from {
-        background-position: 0 0;
+        background-position: 300% 0;
     }
     to {
-        background-position: 300% 0;
+        background-position: 0 0;
     }
 }
 
