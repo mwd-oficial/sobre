@@ -39,7 +39,7 @@ html {
 body {
     text-align: justify;
     font-family: 'Kalam', Arial, Helvetica, sans-serif;
-    background-image: url(../imagens/codigos-fundo.webp);
+    background-image: url(../imagens/codigos-fundo.avif);
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -386,7 +386,7 @@ section {
 #back-swiper {
     width: 95%;
     height: 95%;
-    background-image: url(../imagens/codigos3.webp);
+    background-image: url(../imagens/codigos3.avif);
     background-position: center center;
     background-size: cover;
     border-radius: 15px;
@@ -544,7 +544,7 @@ main {
     margin: auto;
     width: 100vw;
     padding-bottom: 50px;
-    background-image: url(../imagens/codigos3.webp);
+    background-image: url(../imagens/codigos3.avif);
     background-position: top center;
     background-repeat: repeat;
     background-size: contain;
